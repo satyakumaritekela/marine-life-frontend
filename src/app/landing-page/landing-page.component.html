@@ -1,0 +1,55 @@
+
+<div class="div">
+  <div class="div">
+    <mat-carousel timings="250ms ease-in" [autoplay]="true" proportion="30" slideHeight="100%" interval="5000"
+      color="primary" maxWidth="auto" slides="5" [loop]="true" [hideArrows]="false" [hideIndicators]="false"
+      [useKeyboard]="true" [useMouseWheel]="false" orientation="ltr">
+      <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slides; let i = index" [image]="slide.image"
+        overlayColor="#00000040" [hideOverlay]="false"></mat-carousel-slide>
+    </mat-carousel>
+  </div>
+
+  <div class="container" style="padding-top: 10px;">
+  
+    <div class="row resultrow justify-content-center">
+      <div class="row myrow" style=" height: fit-content;width: fit-content;">
+        <div class="col-lg-04 col-sm-02 col-md-4 mycolumn" style="width: 550px;height: 500px;">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Save Marine Life</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <img
+                src='https://www.cmaquarium.org/app/uploads/2018/11/help-the-ocean-infographic-600-square.jpg'
+                style="height: 200px;width: 320px;">
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="col-lg-04 col-sm-02 col-md-4 mycolumn" style="width: 550px;height: 500px;">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Choose your Sea Sport</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <img
+                src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Water_sports_composite.jpg/1200px-Water_sports_composite.jpg'
+                style="height: 200px;width: 320px;">
+            </mat-card-content>
+          </mat-card>
+        </div>
+  
+        <div class="col-lg-04 col-sm-02 col-md-4 mycolumn" style="width: 550px;height: 500px;">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Write Blog about Marine life</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <img
+                src='https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fdavidbressan%2Ffiles%2F2019%2F04%2FElissa_Martin_Sollasina_cthulhu.jpg'
+                style="height: 200px;width: 320px;">
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+</div>

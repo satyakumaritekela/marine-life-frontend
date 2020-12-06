@@ -1,0 +1,29 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-05" *ngFor="let booking of bookings" style="padding: 10px;">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="avatar"></div>
+                    <mat-card-title>{{booking.spot_name}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>
+                        Name: {{booking.booking_name}}
+                    </p>
+                    <p>
+                        Date: {{booking.date}}
+                    </p>
+                    <p>
+                        Time: {{booking.time}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary">Cancel Appointment</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,83 @@
+.my-row{
+
+    padding-top: 20px;
+    height: 300px;
+    border-radius: 25px;
+  }
+  
+  .bookingrow{
+  
+    padding:20px;
+    height: auto;
+  
+  }
+  
+  
+  .timingrow{
+    height: 80px;
+  }
+  
+  
+  .mat-tab-group {
+    margin-bottom: 30px;
+  }
+  
+  .appointmnetbutton{
+    padding-left: 15px;
+  }
+  
+  button:hover{
+    transform: scale(1.05);
+  }
+  
+  
+  mat-icon:hover{
+    transform: scale(1.25);
+  }
+  
+  .my-container{
+  background-color: silver;
+  }
+  
+  
+  img{
+    width: 100%;
+    height: 20rem;
+  }
+  
+  .rewviesection{
+    padding: 20px;
+  }
+  
+  .details{
+    padding-left: 10px;
+  
+  }
+  
+  .example-card {
+    max-width: 1200px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  
+  .confirm{
+  
+    width: 100%;
+  
+  }
+  
+  .doctorname{
+    background-color:whitesmoke;
+  }
+  .myappointment{
+    border: thin silver;
+  }
+  
+  mat-icon:hover{
+    animation: up-bump 0.4s ease;
+  }
+  
+  
