@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-
     this.loginFormGroup = this.formBuilder.group({
       email: ['', Validators.email],
       password: ['', [Validators.required, Validators.minLength(5)]]
@@ -41,11 +40,10 @@ export class LoginComponent implements OnInit {
     if (this.loginFormGroup.valid) {
       this.loginService.login(this.email, this.password).subscribe((data) => {
         if (data.token) {
-          localStorage.setItem('fullname', data.user.fullname)
-          localStorage.setItem('email', data.user.email);
-          localStorage.setItem('type', data.user.type);
-          localStorage.setItem('token', data.token);
-          console.log(data.status);
+          sessionStorage.setItem('fullname', data.user.fullname)
+          sessionStorage.setItem('email', data.user.email);
+          sessionStorage.setItem('type', data.user.type);
+          sessionStorage.setItem('token', data.token);
           this.dialog.closeAll();
           this.snackBar.open('Login Succesful', '', {
             duration: 3000,

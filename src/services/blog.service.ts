@@ -16,7 +16,7 @@ export class BlogService {
 
     getAllBlogs(): Observable<Blog> {
 
-        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + localStorage.getItem('token'));
+        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + sessionStorage.getItem('token'));
         return this.httpClient.get<Blog>(this.url, { headers: reqheaders });
     }
 
@@ -24,7 +24,7 @@ export class BlogService {
 
     postBlog(title, description): Observable<any> {
 
-        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + localStorage.getItem('token'));
+        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + sessionStorage.getItem('token'));
 
         const body = {
             "title": title,

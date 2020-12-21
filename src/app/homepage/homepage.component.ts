@@ -18,7 +18,6 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.blogService.getAllBlogs().subscribe((data) => {
       this.blogs = data;
-      console.log(data)
     });
   }
 

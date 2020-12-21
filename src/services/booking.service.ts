@@ -22,12 +22,12 @@ export class BookingService {
             "time": booking_time,
             "count": Math.floor(Math.random() * Math.floor(3)) + 1
         }
-        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + localStorage.getItem('token'));
+        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + sessionStorage.getItem('token'));
         return this.httpClient.post(this.bookingUrl, body, { headers: reqheaders });
     }
 
     getUserBooking(): Observable<any> {
-        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + localStorage.getItem('token'));
+        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + sessionStorage.getItem('token'));
         return this.httpClient.get<any>(this.getAllBookingsUrl, { headers: reqheaders })
 
     }

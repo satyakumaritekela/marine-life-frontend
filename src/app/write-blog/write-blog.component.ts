@@ -19,9 +19,7 @@ export class WriteBlogComponent implements OnInit {
   }
 
   postBlog() {
-    console.log('Posting Blog..')
-    console.log(this.title + '    ' + this.description)
-
+    
     this.blogService.postBlog(this.title, this.description).subscribe((data) => {
 
       if (data.result) {

@@ -1,6 +1,11 @@
 <div class="container">
 
     <div class="row">
+        <div class="col-05" *ngIf="length==0">
+
+            <h2>There are no booking yet, Go ahead to tourism spots and schedule an appointment</h2>
+
+        </div>
         <div class="col-05" *ngFor="let booking of bookings" style="padding: 10px;">
             <mat-card class="example-card">
                 <mat-card-header>
@@ -18,9 +23,6 @@
                         Time: {{booking.time}}
                     </p>
                 </mat-card-content>
-                <mat-card-actions>
-                    <button mat-raised-button color="primary">Cancel Appointment</button>
-                </mat-card-actions>
             </mat-card>
         </div>
     </div>

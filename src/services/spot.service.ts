@@ -16,12 +16,12 @@ export class SpotService {
 
     getAllSpots(): Observable<any> {
 
-        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + localStorage.getItem('token'));
+        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + sessionStorage.getItem('token'));
         return this.httpClient.get<any>(this.url, { headers: reqheaders });
     }
 
     getOneSpot(id):Observable<any>{
-        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + localStorage.getItem('token'));
+        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + sessionStorage.getItem('token'));
         return this.httpClient.get<any>(this.getSingleSpotUrl+id, { headers: reqheaders });
     }
 }

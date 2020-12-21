@@ -20,7 +20,8 @@ export class SingleSpotComponent implements OnInit {
     private bookingService: BookingService,
     private activatedroute: ActivatedRoute,
     private router: Router,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar) {
+     }
 
   ngOnInit(): void {
     this.spot_id = this.activatedroute.snapshot.paramMap.get("id");
@@ -34,24 +35,22 @@ export class SingleSpotComponent implements OnInit {
   }
 
   bookSlot() {
-
-    if (this.booking_time || this.booking_date) {
+    if (this.booking_time && this.booking_date) {
 
       this.bookingService.createBooking(this.spot_id,this.booking_date,this.booking_time).subscribe((data)=>{
-        console.log(data)
+      
       })
 
       this.snackBar.open('Booking Confirmed', '', {
         duration: 2000
       })
-      this.router.navigate(['mybooking'])
-
+      this.router.navigate(['mybookings'])
     } else {
       this.snackBar.open('Please Select time and date', '', {
         duration: 2000
       })
     }
 
-  }
+  } 
 
 }

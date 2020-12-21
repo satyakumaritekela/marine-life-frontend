@@ -18,14 +18,13 @@ export class HeaderComponent implements OnInit {
     notifications: any[];
     count: number;
     isVendor: boolean = false;
-    isGuest:boolean=false;
+    isGuest: boolean = false;
 
     constructor(
         private dialog: MatDialog,
         private loginService: LoginService,
         private snackBar: MatSnackBar,
-        private router: Router,
-        // private authService: AuthService
+        private router: Router
     ) {
         dialog.afterAllClosed.subscribe(() => {
             this.ngOnInit();
@@ -33,16 +32,15 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        
-        if (localStorage.getItem('token') !== null) {
+       // sessionStorage.clear();
+        if (sessionStorage.getItem('token') !== null) {
             this.isLoggedIn = true;
-            if(localStorage.getItem('type')==='vendor'){
-                this.isVendor=true;
-            }else{
-                this.isGuest=true;
+            if (sessionStorage.getItem('type') === 'vendor') {
+                this.isVendor = true;
+            } else {
+                this.isGuest = true;
             }
         }
-
     }
 
     openLoginPage = () => {
@@ -55,12 +53,13 @@ export class HeaderComponent implements OnInit {
 
     logout = () => {
 
+        console.log('logging out...')
         this.loginService.logout().subscribe(
             (data) => {
 
                 if (data.success) {
                     this.isLoggedIn = false;
-                    localStorage.clear();
+                    sessionStorage.clear();
                     this.snackBar.open('Logged Out', '', {
                         duration: 3000
                     })

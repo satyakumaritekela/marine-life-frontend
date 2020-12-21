@@ -24,7 +24,7 @@ export class LoginService {
     }
 
     logout():Observable<any>{ 
-        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + localStorage.getItem('token'));
+        var reqheaders = new HttpHeaders().set("Authorization", 'Bearer ' + sessionStorage.getItem('token'));
         return this.httpClient.post(this.logourUrl,null, { headers: reqheaders });
     }
 }

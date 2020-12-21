@@ -17,7 +17,6 @@ export class SpotsComponent implements OnInit {
   ngOnInit(): void {
 
     this.SpotService.getAllSpots().subscribe((data)=>{
-      console.log(data)
       this.spots=data
     })
   }

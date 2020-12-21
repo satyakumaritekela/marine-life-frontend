@@ -9,11 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class MyBookingsComponent implements OnInit {
 
   bookings:any;
-  constructor(private bookingService: BookingService) { }
+  length: number;
+  constructor(private bookingService: BookingService) {
+    this.loadBookings();
+   }
 
   ngOnInit(): void {
+    this.loadBookings();
+  }
+
+  loadBookings(){
     this.bookingService.getUserBooking().subscribe((data)=>{
-      console.log(data)
+      this.length=data.length
       this.bookings=data
     })
   }
